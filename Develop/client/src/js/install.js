@@ -20,8 +20,12 @@ butInstall.addEventListener('click', async () => {
             promptDeffered = null;
             butInstall.classList.toggle("hidden", true);
         }
+        console.log(`User response to the install prompt: ${outcome}`);
     }
 });
 
 // TODO: Add an handler for the `appinstalled` event
-window.addEventListener('appinstalled', (event) => {});
+window.addEventListener('appinstalled', (event) => {
+    butInstall.classList.toggle("hidden", true);
+    promptDeffered = null;
+});
